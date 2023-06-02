@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { getAllOrdersOfUser } from "../../redux/slices/ordersSlice";
+// import { getAllOrdersOfUser } from "../../redux/slices/ordersSlice";
 import { server } from "../../ServerConfigs";
 import { toast } from "react-toastify";
 import { styles } from "../../styles/styles";
@@ -21,7 +21,7 @@ const OrderStatusUpdate = ({ orderId, data }) => {
             )
             .then((res) => {
                 toast.success("Order updated!");
-                dispatch(getAllOrdersOfUser(user._id));
+                // dispatch(getAllOrdersOfUser(user._id));
             })
             .catch((error) => {
                 toast.error(error.response.data.message);

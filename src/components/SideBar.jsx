@@ -5,12 +5,14 @@ import Logo from "../assets/logo-color.png";
 import { SidebarData } from "../Data/Data";
 // import { UilBars } from "@iconscout/react-unicons";
 import { motion } from "framer-motion";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { server } from "../ServerConfigs";
+import { toast } from "react-toastify";
 
 const Sidebar = ({ active }) => {
     const [selected, setSelected] = useState(active ?? 0);
+    const navigate = useNavigate();
 
     const [expanded, setExpaned] = useState(false)
     const sidebarVariants = {
@@ -23,10 +25,14 @@ const Sidebar = ({ active }) => {
     }
 
     const logoutHandler = async () => {
-        axios.get(`${server}/shop/logout`, {
-            withCredentials: true,
-        });
-        window.location.reload();
+        try {
+            await axios.get(`${server}/shop/logout`, { withCredentials: true });
+            window.location.reload(true);
+            navigate("/login");
+        } catch (err) {
+            console.log(err)
+            toast.error("Unable to Logout !")
+        }
     };
 
     // console.log(window.innerWidth)
@@ -61,12 +67,12 @@ const Sidebar = ({ active }) => {
                         );
                     })}
 
-                    <div className="menuItem"
-                        onClick={() =>logoutHandler()}
+                    <button className="menuItem"
+                        onClick={() => logoutHandler()}
                     >
                         <span className="material-symbols-outlined">logout</span>
                         <span>Log Out</span>
-                    </div>
+                    </button>
                 </div>
             </motion.div>
             <Outlet />
