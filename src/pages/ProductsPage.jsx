@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { deleteProduct, getAllProductsShop } from '../redux/slices/productSlice'
 import { useImageUploader } from '../components/ImageUploader/ImageUploaderHook'
 import { toast } from 'react-toastify'
+import { server, userAppURL } from '../ServerConfigs'
 
 const ProductsPage = () => {
 
@@ -46,7 +47,7 @@ const ProductsPage = () => {
 
     useEffect(() => {
         dispatch(getAllProductsShop(user._id));
-        console.log(products)
+        // console.log(products)
     }, [dispatch]);
 
     const handleProductDelete = async (res) => {
@@ -64,7 +65,8 @@ const ProductsPage = () => {
 
     }
     const hanldeViewProduct = (res) => {
-        console.log(res)
+        const url = `${userAppURL}product/${res._id}`
+        window.open(url,"_blank")
     }
 
     return (

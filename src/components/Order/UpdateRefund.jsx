@@ -38,7 +38,7 @@ const OrderRefund = ({ orderId, data }) => {
             <h5 className="font-semibold mb-2">Update Order Refund:</h5>
             <div className="flex gap-3 my-2">
             <select
-                className="px-4 py-2 rounded border"
+                className="px-4 py-2 rounded border w-[50%]"
                 value={status}
                 onChange={(e) => setStatus(e.target.value)}
             >

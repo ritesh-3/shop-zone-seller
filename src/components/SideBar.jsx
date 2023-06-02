@@ -6,6 +6,8 @@ import { SidebarData } from "../Data/Data";
 // import { UilBars } from "@iconscout/react-unicons";
 import { motion } from "framer-motion";
 import { Link, Outlet } from "react-router-dom";
+import axios from "axios";
+import { server } from "../ServerConfigs";
 
 const Sidebar = ({ active }) => {
     const [selected, setSelected] = useState(active ?? 0);
@@ -19,6 +21,13 @@ const Sidebar = ({ active }) => {
             left: '-60%'
         }
     }
+
+    const logoutHandler = async () => {
+        axios.get(`${server}/shop/logout`, {
+            withCredentials: true,
+        });
+        window.location.reload();
+    };
 
     // console.log(window.innerWidth)
     return (
@@ -52,7 +61,9 @@ const Sidebar = ({ active }) => {
                         );
                     })}
 
-                    <div className="menuItem">
+                    <div className="menuItem"
+                        onClick={() =>logoutHandler()}
+                    >
                         <span className="material-symbols-outlined">logout</span>
                         <span>Log Out</span>
                     </div>

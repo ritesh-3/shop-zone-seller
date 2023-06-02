@@ -60,7 +60,7 @@ function ExpandableTile({ row }) {
 }
 
 const ResponsiveTable = ({ tableData }) => {
-    console.log(tableData)
+    // console.log(tableData)
     const data = (tableData && tableData.length > 0) ? tableData : tableDataStub
 
     const isMobile = window.innerWidth <= 768;

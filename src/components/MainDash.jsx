@@ -46,7 +46,7 @@ const MainDash = () => {
     const cardData = [
         {
             title: "Account Balance",
-            barValue: Math.round((availableBalance / 100) * 100),
+            barValue: Math.round((products.length / 100) * 100),
             value: availableBalance,
             navigateTo: '/cash..'
         },

@@ -32,36 +32,36 @@ const OrderStatusUpdate = ({ orderId, data }) => {
         <div>
             <h5 className="text-xl font-semibold">Update Status:</h5>
             <div className="flex gap-3 my-2">
-            <select
-                className="px-4 py-2 rounded border"
-                value={status}
-                onChange={(e) => setStatus(e.target.value)}
-            >
-                {[
-                    "Processing",
-                    "Transferred to delivery partner",
-                    "Shipping",
-                    "Received",
-                    "On the way",
-                    "Delivered",
-                ]
-                    .slice(
-                        [
-                            "Processing",
-                            "Transferred to delivery partner",
-                            "Shipping",
-                            "Received",
-                            "On the way",
-                            "Delivered",
-                        ].indexOf(data?.status)
-                    )
-                    .map((option, index) => (
-                        <option value={option} key={index}>
-                            {option}
-                        </option>
-                    ))}
-            </select>
-            <button className={`${styles.gradientButton2} p-2 text-white w-[200px]`} onClick={updateStatusHandler}>Update</button>
+                <select
+                    className="px-4 py-2 rounded border w-[50%]"
+                    value={status}
+                    onChange={(e) => setStatus(e.target.value)}
+                >
+                    {[
+                        "Processing",
+                        "Transferred to delivery partner",
+                        "Shipping",
+                        "Received",
+                        "On the way",
+                        "Delivered",
+                    ]
+                        .slice(
+                            [
+                                "Processing",
+                                "Transferred to delivery partner",
+                                "Shipping",
+                                "Received",
+                                "On the way",
+                                "Delivered",
+                            ].indexOf(data?.status)
+                        )
+                        .map((option, index) => (
+                            <option value={option} key={index}>
+                                {option}
+                            </option>
+                        ))}
+                </select>
+                <button className={`${styles.gradientButton2} p-2 text-white w-[200px]`} onClick={updateStatusHandler}>Update</button>
             </div>
         </div>
     );
