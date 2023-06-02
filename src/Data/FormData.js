@@ -87,8 +87,8 @@ export const CreateProductForm = [
         validation: Yup.string().required("Required"),
     },
     {
-        name: "orignalPrice",
-        placeholder: "Orignal Price",
+        name: "originalPrice",
+        placeholder: "Original Price",
         type: "text",
         validation: Yup.number().required("Required").typeError('Please enter a valid numeric value'),
     },
@@ -137,8 +137,8 @@ export const CreateEventForm = [
         validation: Yup.string().required("Required"),
     },
     {
-        name: "orignalPrice",
-        placeholder: "Orignal Price",
+        name: "originalPrice",
+        placeholder: "Original Price",
         type: "text",
         validation: Yup.number().required("Required").typeError('Please enter a valid numeric value'),
     },
