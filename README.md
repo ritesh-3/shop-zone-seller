@@ -2,6 +2,8 @@
 
 Welcome to the Shop Zone Seller repository! This repository contains the UI side code for the multivendor e-commerce project called Shop Zone. It focuses on the functionality required for sellers, including features such as registering and logging in as a seller, updating order status, creating and viewing products, creating and viewing discount coupons, and more. The project is built using React.js.
 
+[Demo]([url](https://shop-zone-seller.web.app/)
+
 ## Features
 
 - Seller registration: Sellers can create an account and register themselves.
