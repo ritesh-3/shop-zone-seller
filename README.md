@@ -44,6 +44,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-If you have any questions, suggestions, or feedback, please feel free to contact us at [ritesh81269](mailto:ritesh81269@gmail.com).
+If you have any questions, suggestions, or feedback, please feel free to contact us at [ritesh81269@gmail.com](mailto:ritesh81269@gmail.com).
 
 Happy selling with Shop Zone!
